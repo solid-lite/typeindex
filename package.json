@@ -1,0 +1,25 @@
+{
+  "name": "typeindex",
+  "version": "0.0.1",
+  "description": "ES module and CLI to manage publicTypeIndex.json TypeRegistration entries.",
+  "type": "module",
+  "main": "index.js",
+  "exports": "./index.js",
+  "bin": {
+    "typeindex": "bin/typeindex"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "keywords": [
+    "typeindex",
+    "solid",
+    "TypeRegistration",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/play-grounds/solid-lite.git"
+  }
+}

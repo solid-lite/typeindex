@@ -1,0 +1,80 @@
+[
+  {
+    "type": "TypeRegistration",
+    "forClass": "Tracker",
+    "instance": "../public/todo/todo.json",
+    "registeredWith": "https://nostr.app/todo.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Tracker",
+    "instance": "../public/todo/small.json",
+    "registeredWith": "https://nostr.app/todo.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Tracker",
+    "instance": "../public/todo/later.json",
+    "registeredWith": "https://nostr.app/todo.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Tracker",
+    "instance": "../public/todo/someday.json",
+    "registeredWith": "https://nostr.app/todo.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Tracker",
+    "instance": "../public/todo/chores.json",
+    "registeredWith": "https://nostr.app/todo.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Tracker",
+    "instance": "../public/todo/ai.json",
+    "registeredWith": "https://nostr.app/todo.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Tracker",
+    "instance": "../public/todo/actions.json",
+    "registeredWith": "https://nostr.app/todo.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "BookmarkCollection",
+    "instance": "../public/bookmark/bookmark.json",
+    "registeredWith": "https://nostr.app/bookmark.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "BookmarkCollection",
+    "instance": "../public/bookmark/toread.json",
+    "registeredWith": "https://nostr.app/bookmark.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "BookmarkCollection",
+    "instance": "../public/bookmark/work.json",
+    "registeredWith": "https://nostr.app/bookmark.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Wallet",
+    "instance": "../public/wallet/index.json",
+    "registeredWith": "https://nostr.app/datawallet.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Pages",
+    "instance": "../public/pages/index.md",
+    "registeredWith": "https://nostr.app/pages.html"
+  },
+  {
+    "type": "TypeRegistration",
+    "forClass": "Playlist",
+    "instance": "../public/playlists/test.m3u",
+    "registeredWith": "https://mp3url.org/slideshow.html"
+  }
+]

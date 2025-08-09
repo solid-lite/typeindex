@@ -1,0 +1,129 @@
+#!/usr/bin/env node
+
+import { addTypeRegistration, removeTypeRegistration, readTypeIndex } from '../index.js';
+
+function parseArgs(argv) {
+  const parsed = { _: [], flags: {} };
+  for (let i = 0; i < argv.length; i++) {
+    const token = argv[i];
+    if (token.startsWith('--')) {
+      const [k, v] = token.slice(2).split('=');
+      if (v !== undefined) {
+        parsed.flags[k] = v;
+      } else {
+        const next = argv[i + 1];
+        if (next && !next.startsWith('-')) {
+          parsed.flags[k] = next;
+          i++;
+        } else {
+          parsed.flags[k] = true;
+        }
+      }
+    } else if (token.startsWith('-')) {
+      const k = token.slice(1);
+      const next = argv[i + 1];
+      if (next && !next.startsWith('-')) {
+        parsed.flags[k] = next;
+        i++;
+      } else {
+        parsed.flags[k] = true;
+      }
+    } else {
+      parsed._.push(token);
+    }
+  }
+  return parsed;
+}
+
+function printUsage() {
+  console.log(`typeindex <command> [options]
+
+Commands:
+  read                 List entries (optionally filter)
+  add                  Add an entry
+  remove               Remove entries by criteria or index
+
+Global options:
+  --file <path>        Path to publicTypeIndex.json (default: ./publicTypeIndex.json)
+
+read options:
+  --forClass <name>    Filter by forClass
+
+add options:
+  --forClass <name>    Required
+  --instance <path>    Required
+  --registeredWith <url> Required
+  --type <string>      Default: TypeRegistration
+  --allowDuplicate     Allow duplicates
+
+remove options:
+  --index <n>          Remove by array index (0-based)
+  --forClass <name>    Match criterion
+  --instance <path>    Match criterion
+  --registeredWith <url> Match criterion
+`);
+}
+
+async function main() {
+  const { _, flags } = parseArgs(process.argv.slice(2));
+  const cmd = (_[0] || 'read').toLowerCase();
+
+  try {
+    if (cmd === 'read' || cmd === 'list' || cmd === 'ls') {
+      const items = await readTypeIndex({ file: flags.file, filter: { forClass: flags.forClass } });
+      console.log(JSON.stringify(items, null, 2));
+      return;
+    }
+
+    if (cmd === 'add') {
+      const res = await addTypeRegistration(
+        {
+          type: flags.type,
+          forClass: flags.forClass,
+          instance: flags.instance,
+          registeredWith: flags.registeredWith,
+        },
+        { file: flags.file, allowDuplicate: !!flags.allowDuplicate }
+      );
+      if (res.added) {
+        console.log('Added entry to', res.file);
+      } else {
+        console.error('Duplicate entry not added. Use --allowDuplicate to override.');
+        process.exitCode = 2;
+      }
+      return;
+    }
+
+    if (cmd === 'remove' || cmd === 'rm' || cmd === 'delete' || cmd === 'del') {
+      const index = flags.index !== undefined ? Number(flags.index) : undefined;
+      if (flags.index !== undefined && Number.isNaN(index)) {
+        throw new Error('--index must be a number');
+      }
+      const res = await removeTypeRegistration(
+        {
+          index,
+          forClass: flags.forClass,
+          instance: flags.instance,
+          registeredWith: flags.registeredWith,
+        },
+        { file: flags.file }
+      );
+      console.log(`Removed ${res.removed} entr${res.removed === 1 ? 'y' : 'ies'} from ${res.file}`);
+      return;
+    }
+
+    if (cmd === 'help' || flags.help || flags.h) {
+      printUsage();
+      return;
+    }
+
+    console.error('Unknown command:', cmd);
+    printUsage();
+    process.exitCode = 1;
+  } catch (err) {
+    console.error(err.message || String(err));
+    process.exitCode = 1;
+  }
+}
+
+main();
