@@ -1,13 +1,13 @@
 ## typeindex
 
-[![version](https://img.shields.io/github/package-json/v/solid-lite/typeindex?branch=gh-pages&style=flat-square)](https://github.com/solid-lite/typeindex/blob/gh-pages/package.json)
+[![version](https://img.shields.io/github/package-json/v/play-grounds/solid-lite?filename=typeindex%2Fpackage.json&style=flat-square)](https://github.com/play-grounds/solid-lite/blob/main/typeindex/package.json)
 [![npm](https://img.shields.io/npm/v/typeindex?style=flat-square)](https://www.npmjs.com/package/typeindex)
-[![license](https://img.shields.io/github/license/solid-lite/typeindex?style=flat-square)](https://opensource.org/licenses/MIT)
+[![license](https://img.shields.io/github/license/play-grounds/solid-lite?style=flat-square)](https://opensource.org/licenses/MIT)
 ![node](https://img.shields.io/badge/node-%3E%3D18.0-339933?logo=node.js&style=flat-square)
 ![esm-only](https://img.shields.io/badge/ESM-only-ffb000?logo=javascript&logoColor=white&style=flat-square)
 ![status](https://img.shields.io/badge/status-alpha-orange?style=flat-square)
-[![GitHub issues](https://img.shields.io/github/issues/solid-lite/typeindex?style=flat-square)](https://github.com/solid-lite/typeindex/issues)
-[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](https://github.com/solid-lite/typeindex/issues/new/choose)
+[![GitHub issues](https://img.shields.io/github/issues/play-grounds/solid-lite?style=flat-square)](https://github.com/play-grounds/solid-lite/issues)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square)](https://github.com/play-grounds/solid-lite/issues/new/choose)
 
 ES module and CLI to manage `publicTypeIndex.json` entries.
 
