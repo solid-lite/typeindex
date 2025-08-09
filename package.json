@@ -1,6 +1,6 @@
 {
   "name": "typeindex",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ES module and CLI to manage publicTypeIndex.json TypeRegistration entries.",
   "type": "module",
   "main": "index.js",

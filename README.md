@@ -1,7 +1,8 @@
 ## typeindex
 
 <p>
-  <a href="https://www.npmjs.com/package/typeindex"><img alt="version" src="https://img.shields.io/badge/version-0.0.1-blue?style=flat-square"></a>
+  <a href="https://github.com/play-grounds/solid-lite/blob/gh-pages/typeindex/package.json"><img alt="version" src="https://img.shields.io/github/package-json/v/play-grounds/solid-lite?filename=typeindex/package.json&branch=gh-pages&style=flat-square"></a>
+  <a href="https://www.npmjs.com/package/typeindex"><img alt="npm" src="https://img.shields.io/npm/v/typeindex?style=flat-square"></a>
   <a href="https://opensource.org/licenses/MIT"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue?style=flat-square"></a>
   <a href="#"><img alt="node" src="https://img.shields.io/badge/node-%3E%3D18.0-339933?logo=node.js&style=flat-square"></a>
   <a href="#"><img alt="esm-only" src="https://img.shields.io/badge/ESM-only-ffb000?logo=javascript&logoColor=white&style=flat-square"></a>
