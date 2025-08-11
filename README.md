@@ -1,7 +1,5 @@
 ## typeindex
 
-[![version](https://img.shields.io/github/package-json/v/play-grounds/solid-lite?filename=typeindex%2Fpackage.json&style=flat-square)](https://github.com/play-grounds/solid-lite/blob/main/typeindex/package.json)
-[![npm](https://img.shields.io/npm/v/typeindex?style=flat-square)](https://www.npmjs.com/package/typeindex)
 [![license](https://img.shields.io/github/license/play-grounds/solid-lite?style=flat-square)](https://opensource.org/licenses/MIT)
 ![node](https://img.shields.io/badge/node-%3E%3D18.0-339933?logo=node.js&style=flat-square)
 ![esm-only](https://img.shields.io/badge/ESM-only-ffb000?logo=javascript&logoColor=white&style=flat-square)
